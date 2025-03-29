@@ -41,7 +41,7 @@ export function MapList({ maps, selectedMapId, onSelectMap, onCreateMap, onDelet
 
         customTileLayer = {
           imageUrl: customImage.dataUrl,
-          imageBounds: bounds as [[number, number], [number, number]],
+          imageBounds: bounds as unknown as [[number, number], [number, number]],
           imageWidth: customImage.width,
           imageHeight: customImage.height,
         }
@@ -123,58 +123,58 @@ export function MapList({ maps, selectedMapId, onSelectMap, onCreateMap, onDelet
         }}
       >
         <DialogContent className="sm:max-w-md max-h-9/10 h-full z-[1200]">
-        <ScrollArea className="sm:max-w-md mt-2 mb-4 pr-4 relative mx-0 w-full max-h-8/10 max-w-fit">
-          <DialogHeader>
-            <DialogTitle>Create New Map</DialogTitle>
-          </DialogHeader>
-          <div className="py-4 space-y-4">
-            <div className="space-y-2">
-              <label htmlFor="map-name" className="text-sm font-medium">
-                Map Name
-              </label>
-              <Input
-                id="map-name"
-                placeholder="Map Name"
-                value={newMapName}
-                onChange={(e) => setNewMapName(e.target.value)}
-                autoFocus
-              />
-            </div>
-            <Tabs value={activeTab} onValueChange={setActiveTab}>
-              <TabsList className="grid w-full grid-cols-2">
-                <TabsTrigger value="osm">OpenStreetMap</TabsTrigger>
-                <TabsTrigger value="custom">Custom Image</TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="osm" className="space-y-4 pt-2">
-                <div className="border rounded-md p-4 bg-muted/30">
-                  <p className="text-sm">
-                    Using OpenStreetMap as the base layer. This provides a standard world map that works well for
-                    real-world locations.
-                  </p>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="custom" className="space-y-4 pt-2">
-                <ImageUpload
-                  onImageSelected={setCustomImage}
-                  onClearImage={() => setCustomImage(null)}
-                  selectedImage={customImage?.dataUrl}
+          <ScrollArea className="sm:max-w-md mt-2 mb-4 pr-4 relative mx-0 w-full max-h-8/10 max-w-fit">
+            <DialogHeader>
+              <DialogTitle>Create New Map</DialogTitle>
+            </DialogHeader>
+            <div className="py-4 space-y-4">
+              <div className="space-y-2">
+                <label htmlFor="map-name" className="text-sm font-medium">
+                  Map Name
+                </label>
+                <Input
+                  id="map-name"
+                  placeholder="Map Name"
+                  value={newMapName}
+                  onChange={(e) => setNewMapName(e.target.value)}
+                  autoFocus
                 />
-              </TabsContent>
-            </Tabs>
-          </div>
-          <DialogFooter>
-            <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
-              Cancel
-            </Button>
-            <Button
-              onClick={handleCreateMap}
-              disabled={!newMapName.trim() || (activeTab === "custom" && !customImage)}
-            >
-              Create
-            </Button>
-          </DialogFooter>
+              </div>
+              <Tabs value={activeTab} onValueChange={setActiveTab}>
+                <TabsList className="grid w-full grid-cols-2">
+                  <TabsTrigger value="osm">OpenStreetMap</TabsTrigger>
+                  <TabsTrigger value="custom">Custom Image</TabsTrigger>
+                </TabsList>
+
+                <TabsContent value="osm" className="space-y-4 pt-2">
+                  <div className="border rounded-md p-4 bg-muted/30">
+                    <p className="text-sm">
+                      Using OpenStreetMap as the base layer. This provides a standard world map that works well for
+                      real-world locations.
+                    </p>
+                  </div>
+                </TabsContent>
+
+                <TabsContent value="custom" className="space-y-4 pt-2">
+                  <ImageUpload
+                    onImageSelected={setCustomImage}
+                    onClearImage={() => setCustomImage(null)}
+                    selectedImage={customImage?.dataUrl}
+                  />
+                </TabsContent>
+              </Tabs>
+            </div>
+            <DialogFooter>
+              <Button variant="outline" onClick={() => setIsCreateDialogOpen(false)}>
+                Cancel
+              </Button>
+              <Button
+                onClick={handleCreateMap}
+                disabled={!newMapName.trim() || (activeTab === "custom" && !customImage)}
+              >
+                Create
+              </Button>
+            </DialogFooter>
           </ScrollArea>
         </DialogContent>
       </Dialog>

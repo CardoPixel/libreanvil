@@ -124,23 +124,22 @@ export function TimelineManager({
             </div>
           ) : (
             <div className="relative pl-6 border-l border-border">
+              {/* eslint-disable-next-line @typescript-eslint/no-unused-vars */}
               {sortedEvents.map((event, index) => (
                 <div key={event.id} className="mb-6 relative">
                   {/* Timeline dot */}
                   <div
-                    className={`absolute w-4 h-4 rounded-full border-2 left-[-10px] top-1.5 ${
-                      activeTimelineEventId === event.id
+                    className={`absolute w-4 h-4 rounded-full border-2 left-[-10px] top-1.5 ${activeTimelineEventId === event.id
                         ? "bg-primary border-primary"
                         : "bg-background border-muted-foreground"
-                    }`}
+                      }`}
                   />
 
                   <div
-                    className={`ml-4 p-4 rounded-md border ${
-                      selectedTimelineEventId === event.id
+                    className={`ml-4 p-4 rounded-md border ${selectedTimelineEventId === event.id
                         ? "border-primary bg-primary/10"
                         : "border-border hover:border-primary/50"
-                    }`}
+                      }`}
                   >
                     <div className="flex items-center justify-between">
                       <div

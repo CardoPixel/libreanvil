@@ -94,11 +94,10 @@ export function MarkerManager({
                       {layerMarkers.map((marker) => (
                         <li key={marker.id}>
                           <div
-                            className={`flex items-center justify-between p-3 rounded-md border ${
-                              selectedMarkerId === marker.id
+                            className={`flex items-center justify-between p-3 rounded-md border ${selectedMarkerId === marker.id
                                 ? "border-primary bg-primary/10"
                                 : "border-border hover:border-primary/50"
-                            }`}
+                              }`}
                           >
                             <div
                               className="flex items-center gap-3 flex-1 cursor-pointer"
@@ -222,7 +221,7 @@ export function MarkerManager({
                   onChange={(e) => setEditingMarker({ ...editingMarker, link: e.target.value })}
                 />
                 <p className="text-xs text-muted-foreground">
-                  Enter an internal link (e.g., "timeline/event-1") to link to another part of the app
+                  {`Enter an internal link (e.g., "timeline/event-1") to link to another part of the app`}
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">

@@ -96,8 +96,8 @@ export function PolygonManager({
                         <li key={polygon.id}>
                           <div
                             className={`flex items-center justify-between p-3 rounded-md border ${selectedPolygonId === polygon.id
-                                ? "border-primary bg-primary/10"
-                                : "border-border hover:border-primary/50"
+                              ? "border-primary bg-primary/10"
+                              : "border-border hover:border-primary/50"
                               }`}
                           >
                             <div
@@ -265,7 +265,7 @@ export function PolygonManager({
                     onChange={(e) => setEditingPolygon({ ...editingPolygon, link: e.target.value })}
                   />
                   <p className="text-xs text-muted-foreground">
-                    Enter an internal link (e.g., "timeline/event-1") to link to another part of the app
+                    {`Enter an internal link (e.g., "timeline/event-1") to link to another part of the app`}
                   </p>
                 </div>
               </div>

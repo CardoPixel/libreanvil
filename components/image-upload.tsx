@@ -9,6 +9,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { fileToDataUrl, getImageDimensions } from "@/lib/custom-tile-layer"
+import Image from "next/image"
 
 interface ImageUploadProps {
   onImageSelected: (imageData: {
@@ -116,7 +117,7 @@ export function ImageUpload({ onImageSelected, onClearImage, selectedImage }: Im
             <div className="text-center text-muted-foreground">Loading preview...</div>
           ) : preview ? (
             <div className="relative w-full h-full">
-              <img src={preview || "/placeholder.svg"} alt="Map preview" className="object-contain w-full h-full" />
+              <Image src={preview || "/placeholder.svg"} alt="Map preview" className="object-contain w-full h-full" />
             </div>
           ) : (
             <div className="text-center text-muted-foreground flex flex-col items-center gap-2">

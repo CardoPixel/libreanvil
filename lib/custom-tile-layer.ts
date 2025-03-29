@@ -62,8 +62,6 @@ export async function calculateImageBounds(
     throw new Error("Leaflet can only be used in the browser environment.")
   }
 
-  const L = await import("leaflet")
-
   // Calculate the aspect ratio of the image
   const aspectRatio = imageWidth / imageHeight
 
@@ -104,6 +102,7 @@ export function getImageDimensions(dataUrl: string): Promise<{ width: number; he
 }
 
 // Function to validate and fix polygon coordinates if needed
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function validatePolygonCoordinates(coordinates: any[]): [number, number][] {
   // Ensure we have an array of coordinates
   if (!Array.isArray(coordinates)) {

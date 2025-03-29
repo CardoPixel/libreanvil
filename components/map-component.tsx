@@ -11,9 +11,10 @@ import { MapPin, Hexagon } from "lucide-react"
 
 // Fix Leaflet icon issues
 import { fixLeafletIcons } from "@/lib/leaflet-fixes"
-import { calculateImageBounds, createCustomTileLayer, getImageDimensionsFromUrl } from "@/lib/custom-tile-layer"
+import { createCustomTileLayer, getImageDimensionsFromUrl } from "@/lib/custom-tile-layer"
 
 // Add missing type definitions for Leaflet Draw
+/* eslint-disable @typescript-eslint/no-namespace, @typescript-eslint/no-explicit-any */
 declare module "leaflet" {
   namespace Draw {
     namespace Event {
@@ -106,6 +107,7 @@ export default function MapComponent({
     }
   }
 
+  // FIXME: 
   // Initialize map
   useEffect(() => {
     // Skip if the map is already initialized or container is not available
@@ -316,6 +318,8 @@ export default function MapComponent({
 
     // Cleanup on unmount
     return cleanupMap;
+
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map.id]); // Only re-initialize when map ID changes
 
   // Update map when map data changes
@@ -327,12 +331,14 @@ export default function MapComponent({
 
     // Update layers, markers, and polygons
     updateLayersAndContent()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [map.centerLat, map.centerLng, map.zoom, mapReady, map.useCustomTileLayer, map.customTileLayer])
 
   // Update layers when active layers change
   useEffect(() => {
     if (!mapRef.current || !mapReady) return
     updateLayersAndContent()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeLayers, activeTimelineEventId, map.markers, map.polygons, mapReady])
 
   // Function to update all layers and content

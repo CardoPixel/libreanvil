@@ -64,7 +64,7 @@ export function MapSettings({ map, onUpdateMap }: MapSettingsProps) {
 
       updates.customTileLayer = {
         imageUrl: customImage.dataUrl,
-        imageBounds: bounds as [[number, number], [number, number]],
+        imageBounds: bounds as unknown as [[number, number], [number, number]],
         imageWidth: customImage.width,
         imageHeight: customImage.height,
       }
@@ -90,7 +90,7 @@ export function MapSettings({ map, onUpdateMap }: MapSettingsProps) {
       <Card>
         <CardHeader>
           <CardTitle>Map Settings</CardTitle>
-          <CardDescription>Configure your map's basic settings</CardDescription>
+          <CardDescription>{"Configure your map's basic settings"}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
           <div className="space-y-2">
