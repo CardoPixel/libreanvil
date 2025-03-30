@@ -28,11 +28,17 @@ jobs:
         run: |
           git fetch origin main
           if [ "$(git rev-list --count HEAD ^origin/main)" -eq 0 ]; then
-            echo "No new commits since last release."
+            echo "↔️ No new commits since last release."
             echo "::set-output name=should_release::false"
           else
-            echo "New commits found."
+            echo "🆕 New commits found."
             echo "::set-output name=should_release::true"
+          fi
+      - name: 🧹 Ensure clean working directory
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "⚠️ Working directory is not clean. Please commit or stash changes."
+            exit 1
           fi
 
       - name: 🚀 Release
