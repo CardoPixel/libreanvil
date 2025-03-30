@@ -1,4 +1,10 @@
 # LibreAnvil 🌎🔨
+![GitHub Release](https://img.shields.io/github/v/release/CardoPixel/libreanvil?sort=semver&display_name=release&style=flat)
+![GitHub contributors](https://img.shields.io/github/contributors/CardoPixel/libreanvil)
+![GitHub License](https://img.shields.io/github/license/CardoPixel/libreanvil)
+![GitHub repo size](https://img.shields.io/github/repo-size/CardoPixel/libreanvil)
+
+
 
 Welcome to the **LibreAnvil** repository! 🚀
 
