@@ -6,7 +6,7 @@
 /node_modules
 /.pnp
 .pnp.js
-.bun.lock
+bun.lock
 .yarn/*
 !.yarn/patches
 !.yarn/plugins
