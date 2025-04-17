@@ -48,4 +48,6 @@ jobs:
 
       - name: 🚀 Release
         if: ${{ github.event_name == 'workflow_dispatch' || steps.check_commits.outputs.should_release == 'true' }}
+        env:
+          RELEASE_IT_GITHUB_TOKEN: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
         run: bun run release
