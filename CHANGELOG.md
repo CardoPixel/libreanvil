@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.2.1 (2025-04-17)</small>
+
+* Update auto-release.yaml ([72b51c6](https://github.com/CardoPixel/libreanvil/commit/72b51c6))
+
 ## 0.2.0 (2025-03-30)
 
 * fix: :bug: Fixed bugs on docs file rendering ([78f04f1](https://github.com/CardoPixel/libreanvil/commit/78f04f1))
