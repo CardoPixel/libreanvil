@@ -1,4 +1,3 @@
-
 name: Release
 
 on:
@@ -30,19 +29,20 @@ jobs:
           git fetch origin main
           if [ "$(git rev-list --count HEAD ^origin/main)" -eq 0 ]; then
             echo "↔️ No new commits since last release."
-            echo "should_release=false" >> $GITHUB_ENV
+            echo "::set-output name=should_release::false"
           else
             echo "🆕 New commits found."
-            echo "should_release=true" >> $GITHUB_ENV
+            echo "::set-output name=should_release::true"
           fi
-
       - name: 🧹 Ensure clean working directory
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
+          if [ -n "$(git status)" ]; then
             echo "⚠️ Working directory is not clean. Please commit or stash changes."
+            echo "📝 Changes:"
+            echo "$git_status"
             exit 1
           fi
 
       - name: 🚀 Release
-        if: ${{ github.event_name == 'workflow_dispatch' || env.should_release == 'true' }}
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.check_commits.outputs.should_release == 'true' }}
         run: bun run release
