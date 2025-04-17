@@ -1,5 +1,9 @@
 # Changelog
 
+## <small>0.2.2 (2025-04-17)</small>
+
+* Update package.json ([d31246c](https://github.com/CardoPixel/libreanvil/commit/d31246c))
+
 ## <small>0.2.1 (2025-04-17)</small>
 
 * Update auto-release.yaml ([72b51c6](https://github.com/CardoPixel/libreanvil/commit/72b51c6))
