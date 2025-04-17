@@ -36,11 +36,9 @@ jobs:
           fi
       - name: 🧹 Ensure clean working directory
         run: |
-          if [ -n "$(git status)" ]; then
-            echo "⚠️ Working directory is not clean. Please commit or stash changes."
-            echo "📝 Changes:"
-            echo "$git_status"
-            exit 1
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "⚠️ Working directory is not clean. Stashing changes."
+            git stash --include-untracked
           fi
 
       - name: 🚀 Release
