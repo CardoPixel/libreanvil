@@ -1,0 +1,104 @@
+{
+    "Header": {
+        "worlds": "Mundos",
+        "editor": "Editor",
+        "docs": "Documentación",
+        "newWorld": "Nuevo Mundo",
+        "import": "Importar",
+        "export": "Exportar",
+        "importWorld": "Importar Mundo",
+        "importMap": "Importar Mapa",
+        "exportWorld": "Exportar Mundo",
+        "exportMap": "Exportar Mapa"
+    },
+    "Theme": {
+        "toggleTheme": "Cambiar tema",
+        "light": "Claro",
+        "dark": "Oscuro",
+        "system": "Sistema"
+    },
+    "PWA": {
+        "installPrompt": "¿Instalar LibreAnvil para una mejor experiencia?",
+        "install": "Instalar",
+        "notNow": "Ahora no"
+    },
+    "Map": {
+        "addMarker": "Agregar marcador",
+        "addPolygon": "Agregar polígono",
+        "addPolyline": "Agregar polilínea",
+        "addNote": "Agregar nota",
+        "layers": "Gestionar capas",
+        "floors": "Pisos",
+        "ground": "Suelo",
+        "underground": "Subterráneo",
+        "floor": "Piso"
+    },
+    "Editor": {
+        "edit": "Editar",
+        "preview": "Vista previa",
+        "bold": "Negrita",
+        "italic": "Cursiva",
+        "heading1": "Encabezado 1",
+        "heading2": "Encabezado 2",
+        "heading3": "Encabezado 3",
+        "bulletList": "Lista de viñetas",
+        "orderedList": "Lista ordenada",
+        "link": "Enlace",
+        "image": "Imagen",
+        "table": "Tabla",
+        "undo": "Deshacer",
+        "redo": "Rehacer",
+        "enterLink": "Introduce la URL del enlace:",
+        "enterImageURL": "Introduce la URL de la imagen:"
+    },
+    "Timeline": {
+        "timeline": "Cronología",
+        "noEvents": "No se encontraron eventos",
+        "filterEvents": "Filtrar eventos"
+    },
+    "Character": {
+        "familyTree": "Árbol genealógico",
+        "directFamily": "Relaciones directas",
+        "extendedFamily": "Relaciones extendidas",
+        "stats": "Estadísticas",
+        "backstory": "Historia"
+    },
+    "World": {
+        "createWorld": "Crear mundo",
+        "editWorld": "Editar mundo",
+        "worldName": "Nombre del mundo",
+        "worldDescription": "Descripción del mundo",
+        "save": "Guardar mundo",
+        "cancel": "Cancelar",
+        "delete": "Eliminar mundo",
+        "confirmDelete": "¿Estás seguro de que deseas eliminar este mundo? Esta acción no se puede deshacer."
+    },
+    "Article": {
+        "character": "Personaje",
+        "location": "Ubicación",
+        "organization": "Organización",
+        "event": "Evento",
+        "new": "Nuevo {type}",
+        "edit": "Editar {type}",
+        "name": "Nombre",
+        "content": "Contenido",
+        "save": "Guardar",
+        "cancel": "Cancelar",
+        "delete": "Eliminar",
+        "confirmDelete": "¿Estás seguro de que deseas eliminar este {type}? Esta acción no se puede deshacer."
+    },
+    "Import": {
+        "title": "Importar datos",
+        "selectFile": "Seleccionar archivo",
+        "importWorld": "Importar mundo",
+        "importMap": "Importar mapa",
+        "replaceExisting": "Reemplazar datos existentes si se encuentran"
+    },
+    "Export": {
+        "title": "Exportar datos",
+        "filename": "Nombre del archivo",
+        "includeImages": "Incluir imágenes (archivo de mayor tamaño)",
+        "exportWorld": "Exportar mundo",
+        "exportMap": "Exportar mapa"
+    }
+}

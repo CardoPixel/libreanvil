@@ -1,5 +1,8 @@
 {
     "conventionalCommits.scopes": [
         "app"
+    ],
+    "i18n-ally.localesPaths": [
+        "src/messages"
     ]
 }

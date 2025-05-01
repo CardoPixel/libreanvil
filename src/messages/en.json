@@ -1,0 +1,104 @@
+{
+    "Header": {
+        "worlds": "Worlds",
+        "editor": "Editor",
+        "docs": "Documentation",
+        "newWorld": "New World",
+        "import": "Import",
+        "export": "Export",
+        "importWorld": "Import World",
+        "importMap": "Import Map",
+        "exportWorld": "Export World",
+        "exportMap": "Export Map"
+    },
+    "Theme": {
+        "toggleTheme": "Toggle theme",
+        "light": "Light",
+        "dark": "Dark",
+        "system": "System"
+    },
+    "PWA": {
+        "installPrompt": "Install LibreAnvil for a better experience?",
+        "install": "Install",
+        "notNow": "Not Now"
+    },
+    "Map": {
+        "addMarker": "Add Marker",
+        "addPolygon": "Add Polygon",
+        "addPolyline": "Add Polyline",
+        "addNote": "Add Note",
+        "layers": "Manage Layers",
+        "floors": "Floors",
+        "ground": "Ground",
+        "underground": "Underground",
+        "floor": "Floor"
+    },
+    "Editor": {
+        "edit": "Edit",
+        "preview": "Preview",
+        "bold": "Bold",
+        "italic": "Italic",
+        "heading1": "Heading 1",
+        "heading2": "Heading 2",
+        "heading3": "Heading 3",
+        "bulletList": "Bullet List",
+        "orderedList": "Ordered List",
+        "link": "Link",
+        "image": "Image",
+        "table": "Table",
+        "undo": "Undo",
+        "redo": "Redo",
+        "enterLink": "Enter link URL:",
+        "enterImageURL": "Enter image URL:"
+    },
+    "Timeline": {
+        "timeline": "Timeline",
+        "noEvents": "No events found",
+        "filterEvents": "Filter Events"
+    },
+    "Character": {
+        "familyTree": "Family Tree",
+        "directFamily": "Direct Relations",
+        "extendedFamily": "Extended Relations",
+        "stats": "Stats",
+        "backstory": "Backstory"
+    },
+    "World": {
+        "createWorld": "Create World",
+        "editWorld": "Edit World",
+        "worldName": "World Name",
+        "worldDescription": "World Description",
+        "save": "Save World",
+        "cancel": "Cancel",
+        "delete": "Delete World",
+        "confirmDelete": "Are you sure you want to delete this world? This action cannot be undone."
+    },
+    "Article": {
+        "character": "Character",
+        "location": "Location",
+        "organization": "Organization",
+        "event": "Event",
+        "new": "New {type}",
+        "edit": "Edit {type}",
+        "name": "Name",
+        "content": "Content",
+        "save": "Save",
+        "cancel": "Cancel",
+        "delete": "Delete",
+        "confirmDelete": "Are you sure you want to delete this {type}? This action cannot be undone."
+    },
+    "Import": {
+        "title": "Import Data",
+        "selectFile": "Select File",
+        "importWorld": "Import World",
+        "importMap": "Import Map",
+        "replaceExisting": "Replace existing data if found"
+    },
+    "Export": {
+        "title": "Export Data",
+        "filename": "Filename",
+        "includeImages": "Include images (larger file size)",
+        "exportWorld": "Export World",
+        "exportMap": "Export Map"
+    }
+}
