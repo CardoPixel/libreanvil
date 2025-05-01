@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0" # Every Sunday at midnight
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⏬ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🌰 Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: 🔧 Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+
+      - name: 📦 Install dependencies
+        run: bun install
+
+      - name: ⚙️ Configure Git User
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions Bot"
+
+      - name: 🔍 Check for new commits
+        id: check_commits
+        run: |
+          git fetch origin main
+          if [ "$(git rev-list --count HEAD ^origin/main)" -eq 0 ]; then
+            echo "↔️ No new commits since last release."
+            echo "should_release=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "🆕 New commits found."
+            echo "should_release=true" >> "$GITHUB_OUTPUT"
+          fi
+      - name: 🧹 Ensure clean working directory
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "⚠️ Working directory is not clean. Stashing changes."
+            git stash --include-untracked
+          fi
+
+      - name: 🚀 Release
+        if: ${{ github.event_name == 'workflow_dispatch' || steps.check_commits.outputs.should_release == 'true' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
+        run: |
+          export GITHUB_TOKEN=${{ secrets.RELEASE_IT_GITHUB_TOKEN }}
+          bun run release
